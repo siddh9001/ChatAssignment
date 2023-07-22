@@ -1,0 +1,48 @@
+::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ProseMirror p.is-editor-empty:first-child::before {
+    color: #adb5bd;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+  }
+
+  .ProseMirror > * + * {
+    margin-top: 0.75em;
+}
+
+  .ProseMirror ul, .ProseMirror ol {
+    padding: 0 1rem;
+  }
+
+  .ProseMirror code {
+    background-color: rgba(97, 97, 97, 0.425);
+    color: #dbd9d9;
+}
+.ProseMirror pre {
+    background: rgba(93, 93, 93, 0.425);
+    color: #fff;
+    font-family: 'JetBrainsMono', monospace;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+}
+.ProseMirror pre code {
+    color: inherit;
+    padding: 0;
+    background: none;
+    font-size: 0.8rem;
+}
+
+.ProseMirror blockquote {
+    padding-left: 1rem;
+    border-left: 2px solid rgb(206, 206, 206);
+}
+
+.ProseMirror hr {
+    border: none;
+    border-top: 2px solid rgba(13, 13, 13, 0.1);
+    margin: 2rem 0;
+}
