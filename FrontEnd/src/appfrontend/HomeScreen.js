@@ -13,7 +13,7 @@ const HomeScreen = ({
   const [inpUsername, setInpUsername] = useState(null);
 
   const onChangeUsername = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setInpUsername(event.target.value);
   };
 
@@ -27,7 +27,7 @@ const HomeScreen = ({
         setIsChatScreen(true);
       })
       .catch((err) => {
-        console.log("Error in Login function", err.message);
+        // console.log("Error in Login function", err.message);
       });
   };
 

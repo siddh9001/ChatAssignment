@@ -14,11 +14,11 @@ const io = socketIO(httpServer, {
 });
 
 io.on("connection", (socket) => {
-  console.log("A client connected.");
+  // console.log("A client connected.");
 
   // Handle disconnections
   socket.on("disconnect", () => {
-    console.log("A client disconnected.");
+    // console.log("A client disconnected.");
   });
 });
 
@@ -29,7 +29,7 @@ router.get("/", (req, res) => {
 });
 
 router.post("/register", (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
 
   User.findOne({
     username: req.body.username,
@@ -48,7 +48,7 @@ router.post("/register", (req, res) => {
             res.status(200).json(user);
           })
           .catch((err) => {
-            console.log("Error in saving user:", err.message);
+            // console.log("Error in saving user:", err.message);
           });
       }
     })
@@ -58,7 +58,6 @@ router.post("/register", (req, res) => {
 });
 
 router.get("/allmychats/:userid", (req, res) => {
-  //   console.log(req);
   let mychats = [];
   User.findById(req.params.userid)
     .then((user) => {

@@ -26,11 +26,11 @@ const ChatScreen = ({ userData, isUserLoggedIn, onLogout }) => {
     (async function fetchchats() {
       await Getallchats(userData._id)
         .then((allchats) => {
-          console.log("allchats:", allchats.allmychats);
+          // console.log("allchats:", allchats.allmychats);
           setMychats(allchats.allmychats);
         })
         .catch((err) => {
-          console.log("err in fetchchats: ", err.message);
+          // console.log("err in fetchchats: ", err.message);
         });
     })();
   }, [userData._id]);
@@ -44,29 +44,29 @@ const ChatScreen = ({ userData, isUserLoggedIn, onLogout }) => {
     );
     await LoadChatMessages(chatdata._id)
       .then((chatdata) => {
-        console.log("chatscreen: ", chatdata);
+        // console.log("chatscreen: ", chatdata);
         setChatData(chatdata.messages);
       })
       .catch((err) => {
-        console.log("Err in Loadchatmessage: ", err.message);
+        // console.log("Err in Loadchatmessage: ", err.message);
       });
   };
 
   const onClickNewChatCreate = async () => {
     await CreateNewchat(newchatinfo)
       .then(async (result) => {
-        console.log("new chat information: ", result);
+        // console.log("new chat information: ", result);
         await Getallchats(userData._id)
           .then((updatedchats) => {
             setMychats(updatedchats.allmychats);
           })
           .catch((err) => {
-            console.log("Err in getting updated chats:", err.message);
+            // console.log("Err in getting updated chats:", err.message);
           });
         setIsnewchatclicked(false);
       })
       .catch((err) => {
-        console.log("err in new chat information: ", err.messsage);
+        // console.log("err in new chat information: ", err.messsage);
       });
   };
 

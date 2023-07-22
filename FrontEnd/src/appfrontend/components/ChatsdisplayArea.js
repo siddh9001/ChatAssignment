@@ -7,16 +7,16 @@ import { LoadChatMessages } from "../services/service";
 const ChatsdisplayArea = ({ message, chatData, setChatData, userData }) => {
   const socket = io("http://localhost:5000");
   useEffect(() => {
-    console.log("socket useEffect");
+    // console.log("socket useEffect");
     socket.connect();
     socket.on("chatMessageUpdated", async (chatid) => {
       await LoadChatMessages(chatid)
         .then((chatdata) => {
-          console.log("inside socket chatscreen: ", chatdata);
+          // console.log("inside socket chatscreen: ", chatdata);
           setChatData(chatdata.messages);
         })
         .catch((err) => {
-          console.log("Err in Loadchatmessage: ", err.message);
+          // console.log("Err in Loadchatmessage: ", err.message);
         });
     });
     return () => {

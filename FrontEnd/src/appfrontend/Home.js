@@ -32,7 +32,7 @@ const Home = () => {
     setIsHomeScreen(true);
   };
 
-  console.log("userdata inside Home:", userData);
+  // console.log("userdata inside Home:", userData);
   // console.log("is user logged in, inside home:", isUserLoggedIn);
 
   return (

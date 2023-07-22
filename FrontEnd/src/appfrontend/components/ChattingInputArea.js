@@ -70,7 +70,7 @@ const ChattingInputArea = ({
 
   const onMessageSend = async () => {
     const html = editor.getHTML();
-    console.log(html);
+    // console.log(html);
     const newMessage = {
       chatId: chatIdSelected,
       sentby: userData._id,
@@ -83,7 +83,7 @@ const ChattingInputArea = ({
         setChatData(newpdatedchat);
       })
       .catch((err) => {
-        console.log("Err in updating newupdatedchat", err.message);
+        // console.log("Err in updating newupdatedchat", err.message);
       });
   };
 
@@ -96,7 +96,7 @@ const ChattingInputArea = ({
   };
 
   const onFileSelect = (event) => {
-    console.log(event.target.files);
+    // console.log(event.target.files);
     const file = event.target.files[0];
     setMessage({ type: "file", file });
     // setIsFileUploading(true);
